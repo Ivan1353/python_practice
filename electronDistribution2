@@ -1,0 +1,19 @@
+totalElectrons = int(input())
+
+shell = 1
+shells = list()
+
+while True:
+    electronsInShell = 2*(shell**2)
+
+    if totalElectrons <= electronsInShell:
+        shells.append(totalElectrons)
+        break
+
+    elif totalElectrons > electronsInShell:
+        shells.append(electronsInShell)
+        totalElectrons -= electronsInShell
+
+    shell += 1
+
+print(shells)

@@ -1,0 +1,10 @@
+employees = list(map(int, input().split(' ')))
+factor = int(input())
+mapped = list(map(lambda x:x*factor, employees))
+average = sum(mapped)/len(mapped)
+happy = [num for num in mapped if num>=average]
+condition = True if len(happy)>=int(len(mapped)/2) else False
+if condition == True:
+    print(f'Score:{len(happy)}/{len(employees)} Employees are happy!')
+else:
+    print(f'Score:{len(happy)}/{len(employees)} Employees are not happy!')

@@ -1,0 +1,31 @@
+neighbourhood = list(map(int, input().split('@')))
+position = 0
+
+while True:
+    info = input()
+    if info == 'Love!':
+        break
+    else:
+        info = info.split(' ')
+        jump = int(info[1])
+        position += jump
+        while position >= len(neighbourhood):
+            position = abs((position-len(neighbourhood))-1)
+        neighbourhood[position] -= 2
+        if neighbourhood[position] == 0:
+            print(f"Place {position} has Valentine's day.")
+        elif neighbourhood[position] < 0:
+            print(f"Place {position} already had Valentine's day")
+        print(position)
+
+print(f"Cupid's last position was {position}.")
+condition = True
+counter = 0
+for i in neighbourhood:
+    if i <= 0:
+        condition = False
+        counter += 1
+if condition == True:
+    print(f"Mission was successful.")
+else:
+    print(f"Cupid has failed {counter} places.")

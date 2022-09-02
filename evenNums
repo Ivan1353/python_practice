@@ -1,0 +1,3 @@
+numsList = list(map(int, input().split(', ')))
+evenList = [numsList.index(num) for num in numsList if num%2 == 0]
+print(evenList)
